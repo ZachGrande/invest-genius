@@ -10,13 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_07_231618) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_07_234301) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "stocks", force: :cascade do |t|
+    t.bigint "ticker_symbol_id", null: false
+    t.decimal "purchased_price"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ticker_symbol_id"], name: "index_stocks_on_ticker_symbol_id"
+  end
+
+  create_table "ticker_symbol_histories", force: :cascade do |t|
+    t.bigint "ticker_symbol_id", null: false
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ticker_symbol_id"], name: "index_ticker_symbol_histories_on_ticker_symbol_id"
+  end
+
+  create_table "ticker_symbols", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "stocks", "ticker_symbols"
+  add_foreign_key "ticker_symbol_histories", "ticker_symbols"
 end
