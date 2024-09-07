@@ -13,6 +13,7 @@ bin/rails db:create
 ```
 
 * Database initialization
+
 ```shell
 bin/rails db:migrate
 ```
