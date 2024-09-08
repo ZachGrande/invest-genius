@@ -16,11 +16,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_07_234301) do
 
   create_table "stocks", force: :cascade do |t|
     t.bigint "ticker_symbol_id", null: false
-    t.decimal "purchased_price"
-    t.integer "quantity"
+    t.bigint "user_id", null: false
+    t.decimal "purchased_price", null: false
+    t.integer "quantity", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ticker_symbol_id"], name: "index_stocks_on_ticker_symbol_id"
+    t.index ["user_id"], name: "index_stocks_on_user_id"
   end
 
   create_table "ticker_symbol_histories", force: :cascade do |t|
@@ -44,5 +46,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_07_234301) do
   end
 
   add_foreign_key "stocks", "ticker_symbols"
+  add_foreign_key "stocks", "users"
   add_foreign_key "ticker_symbol_histories", "ticker_symbols"
 end
