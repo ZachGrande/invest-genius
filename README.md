@@ -17,3 +17,9 @@ bin/rails db:create
 ```shell
 bin/rails db:migrate
 ```
+
+## Run App
+
+```shell
+bin/dev
+```
