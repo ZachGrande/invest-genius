@@ -1,0 +1,16 @@
+body {
+  background-color: $body-bg;
+  transition: background-color 0.5s;
+  color: $body-bg-dark;
+}
+
+a {
+  color: inherit;
+}
+
+@include color-mode(dark) {
+  body {
+    background-color: $body-bg-dark;
+    color: $body-bg;
+  }
+}
