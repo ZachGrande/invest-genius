@@ -2,10 +2,12 @@
 
 one:
   ticker_symbol: one
+  user: one
   purchased_price: 9.99
   quantity: 1
 
 two:
   ticker_symbol: two
+  user: two
   purchased_price: 9.99
   quantity: 1
