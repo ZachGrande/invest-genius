@@ -27,20 +27,20 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_07_234301) do
 
   create_table "ticker_symbol_histories", force: :cascade do |t|
     t.bigint "ticker_symbol_id", null: false
-    t.decimal "price"
+    t.decimal "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ticker_symbol_id"], name: "index_ticker_symbol_histories_on_ticker_symbol_id"
   end
 
   create_table "ticker_symbols", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
+    t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
