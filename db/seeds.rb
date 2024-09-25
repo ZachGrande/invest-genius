@@ -8,5 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-admin = User.new(email: "zach@investgenius.com")
-admin.save!
+User.create!(email: "zach@investgenius.com")
+
+15.times do |i|
+  User.create!(
+    email: Faker::Internet.email
+  )
+end
