@@ -50,7 +50,7 @@ group :development, :test do
 
   gem "rspec-rails", "~> 7.0.0"
 
-  gem "faker", "~> 3.4"
+  gem "faker", "~> 3.5"
 end
 
 group :development do
