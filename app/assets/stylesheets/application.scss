@@ -2,3 +2,14 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import 'variables';
 @import 'styles';
+
+.hero {
+  text-align: center;
+  background-color: $body-bg-secondary;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #000000;
+  border-radius: 5px;
+}
